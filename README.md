@@ -13,7 +13,26 @@
 
 ---
 
-## 🚀 自動部署到 GitHub Pages (Auto Deploy)
+## ⚡️ 一鍵自動部署 (One-Click Auto Deploy)
+
+為了方便您快速設定 GitHub Repository 與自動部署，我準備了一個自動化腳本。
+
+**先決條件**：
+1.  您需要安裝 **GitHub CLI** (`brew install gh`)。
+2.  您需要登入 GitHub (`gh auth login`)。
+
+**使用方法**：
+在終端機執行以下指令，依照提示操作即可完成所有設定：
+
+```bash
+./deploy_setup.sh
+```
+
+若您沒有安裝 GitHub CLI，請參考下方的「手動部署」說明。
+
+---
+
+## 🚀 手動部署到 GitHub Pages (Manual Setup)
 
 本專案已設定好 **GitHub Actions**，只要您將程式碼推送到 GitHub，就會自動部署。
 
