@@ -1,0 +1,283 @@
+:root {
+  /* Fonts */
+  --font-pixel: 'Press Start 2P', cursive;
+  --font-body: "VT323", "Courier New", Courier, monospace;
+
+  /* Color Palette: "Neon Retro" */
+  --color-bg: #212121;
+  /* Dark Charcoal */
+  --color-text-main: #ffffff;
+
+  /* UI Colors */
+  --color-card-bg: #f5f5f5;
+  /* Off-white for better readability */
+  --color-card-text: #333333;
+  --color-border: #000000;
+
+  /* Accents */
+  --color-primary: #3b82f6;
+  /* Vibrant Blue */
+  --color-primary-dark: #2563eb;
+  --color-secondary: #10b981;
+  /* Emerald Green */
+  --color-danger: #ef4444;
+  /* Red */
+  --color-accent-text: #fbbf24;
+  /* Amber for titles on dark bg */
+
+  /* Shadows */
+  --shadow-hard: 6px 6px 0px rgba(0, 0, 0, 1);
+  --shadow-soft: 4px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "VT323", "Courier New", Courier, monospace;
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(#333 1px, transparent 1px),
+    radial-gradient(#333 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+  font-size: 20px;
+  /* VT323 is naturally smaller, so we bump base size */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Typography Overrides */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-pixel);
+  margin-top: 0;
+  line-height: 1.4;
+  letter-spacing: 1px;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+/* --- Components: PixelCard --- */
+.pixel-card {
+  background-color: var(--color-card-bg);
+  border: 4px solid var(--color-border);
+  padding: 32px 24px;
+  position: relative;
+  box-shadow: var(--shadow-hard);
+  max-width: 600px;
+  width: 95%;
+  margin: 24px auto;
+  color: var(--color-card-text);
+  border-radius: 2px;
+}
+
+/* Add a little "shine" corner */
+.pixel-card::after {
+  content: " ";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: calc(100% - 8px);
+  height: 4px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.pixel-card-title {
+  text-align: center;
+  font-size: 20px;
+  /* Reduced specific size for mobile friendliness, relied on font scaling */
+  margin-bottom: 24px;
+  color: var(--color-border);
+  text-transform: uppercase;
+  border-bottom: 4px solid #ddd;
+  padding-bottom: 16px;
+}
+
+.pixel-card-content {
+  font-size: 18px;
+  /* Readable body text size */
+  line-height: 1.6;
+}
+
+/* --- Components: PixelButton --- */
+.pixel-btn {
+  font-family: var(--font-pixel);
+  font-size: 14px;
+  padding: 16px 20px;
+  border: 4px solid var(--color-border);
+  cursor: pointer;
+  text-transform: uppercase;
+  position: relative;
+  box-shadow: var(--shadow-hard);
+  width: 100%;
+  /* Full width by default in stacked contexts */
+  transition: transform 0.1s, box-shadow 0.1s;
+  background-color: var(--color-primary);
+  color: white;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+/* Button Variants */
+.pixel-btn-primary {
+  background-color: var(--color-primary);
+}
+
+.pixel-btn-primary:hover:not(:disabled) {
+  background-color: var(--color-primary-dark);
+}
+
+.pixel-btn-secondary {
+  background-color: var(--color-secondary);
+  color: #000;
+}
+
+.pixel-btn-danger {
+  background-color: var(--color-danger);
+}
+
+/* Button States */
+.pixel-btn:active:not(:disabled) {
+  transform: translate(4px, 4px);
+  box-shadow: none;
+}
+
+.pixel-btn:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+  opacity: 0.8;
+  box-shadow: none;
+  border-color: #4b5563;
+}
+
+/* --- Form Elements --- */
+input[type="text"] {
+  width: 100%;
+  padding: 16px;
+  font-family: var(--font-pixel);
+  font-size: 14px;
+  border: 4px solid var(--color-border);
+  background: #fff;
+  margin-bottom: 24px;
+  box-shadow: inset 4px 4px 0px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+input[type="text"]:focus {
+  background: #eff6ff;
+  border-color: var(--color-primary);
+}
+
+/* --- Animations --- */
+@keyframes flicker {
+  0% {
+    opacity: 0.9;
+  }
+
+  50% {
+    opacity: 1.0;
+  }
+
+  100% {
+    opacity: 0.9;
+  }
+}
+
+/* --- Specific Overrides --- */
+.game-title {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.question-text {
+  font-family: var(--font-body);
+  /* Use monospace/VT323 instead of Pixel header font for mixed content */
+  font-size: 24px;
+  font-weight: bold;
+  text-align: left;
+  /* Better for reading multi-line */
+  margin-bottom: 32px;
+  line-height: 1.6;
+  border-bottom: 2px dashed #ccc;
+  padding-bottom: 20px;
+}
+
+.option-btn {
+  display: flex;
+  align-items: flex-start;
+  /* Align top for multi-line options */
+  text-align: left;
+  line-height: 1.4;
+  font-size: 20px;
+}
+
+.option-key {
+  color: var(--color-accent-text);
+  margin-right: 12px;
+  min-width: 24px;
+  /* Ensure A. B. C. D. align nicely */
+  font-weight: bold;
+}
+
+.option-content {
+  white-space: pre-wrap;
+  flex: 1;
+}
+
+/* --- Mobile / RWD --- */
+@media (max-width: 600px) {
+  .app-container {
+    padding: 12px;
+  }
+
+  .pixel-card {
+    padding: 20px 16px;
+    width: 100%;
+    margin: 16px 0;
+  }
+
+  .pixel-btn {
+    padding: 12px;
+    font-size: 16px;
+    /* Smaller font on mobile */
+  }
+
+  .option-btn {
+    font-size: 18px;
+    /* Slightly smaller option text */
+  }
+
+  .question-text {
+    font-size: 20px;
+    margin-bottom: 24px;
+  }
+
+  h1 {
+    font-size: 24px;
+    /* Fix huge header on mobile */
+  }
+}

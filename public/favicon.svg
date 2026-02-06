@@ -1,0 +1,29 @@
+<svg width="32" height="32" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+  <rect width="16" height="16" fill="transparent"/>
+  <path fill="#ff0055" d="M2 4h2v2H2zM4 2h2v2H4zM6 4h2v2H6zM8 4h2v2H8zM10 2h2v2h-2zM12 4h2v2h-2zM14 6h-2v2h2zM2 6h2v2H2zM2 8h2v2H2zM14 8h-2v2h2zM4 10h2v2H4zM12 10h2v2h-2zM6 12h2v2H6zM10 12h2v2h-2zM8 14h-2v-2h2z"/>
+  <path fill="#ff0055" d="M4 6h10v2H4z"/>
+  <path fill="#ff0055" d="M6 8h4v2H6z"/>
+  <rect x="2" y="4" width="2" height="2" fill="#ff0055"/>
+  <rect x="4" y="2" width="2" height="2" fill="#ff0055"/>
+  <rect x="8" y="4" width="4" height="2" fill="#ff0055"/>
+  <rect x="10" y="2" width="2" height="2" fill="#ff0055"/>
+  <rect x="2" y="6" width="2" height="4" fill="#ff0055"/>
+  <rect x="12" y="6" width="2" height="4" fill="#ff0055"/>
+  <rect x="4" y="6" width="8" height="2" fill="#ff0055"/>
+  <rect x="4" y="8" width="8" height="2" fill="#ff0055"/>
+  <rect x="6" y="10" width="4" height="2" fill="#ff0055"/>
+  <rect x="8" y="12" width="2" height="2" fill="#ff0055"/>
+  
+  <!-- Let's actually draw a proper pixel heart manually to be sure -->
+  <!-- 
+    . X X . X X .
+    X X X X X X X
+    X X X X X X X
+    . X X X X X .
+    . . X X X . .
+    . . . X . . .
+  -->
+  <path d="
+    M2 2 h2 v2 h2 v-2 h4 v2 h2 v2 h2 v4 h-2 v2 h-2 v2 h-2 v2 h-2 v-2 h-2 v-2 h-2 v-2 h-2 v-4 h2 v-2 z
+  " fill="#ff0055" stroke="#000" stroke-width="1" />
+</svg>
