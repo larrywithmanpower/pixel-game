@@ -1,12 +1,12 @@
 import React from 'react';
-import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
+import {HashRouter, Routes, Route, Navigate} from 'react-router-dom';
 import Home from './pages/Home';
 import Game from './pages/Game';
 import Result from './pages/Result';
 
 function App () {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="app-container">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -15,7 +15,7 @@ function App () {
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
